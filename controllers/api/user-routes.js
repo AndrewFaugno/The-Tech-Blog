@@ -39,7 +39,7 @@ router.get('/:id', (req, res) => {
     })
     .then(dbUserData => {
         if (!dbUserData) {
-            res.status(400).json({ message: 'No user found with that id!' });
+            res.status(400).json({ message: 'No user found with that id' });
             return;
         }
         res.json(dbUserData);
@@ -50,6 +50,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
+// Create a user
 router.post('/', (req, res) => {
     User.create({
         username: req.body.username,
@@ -63,6 +64,7 @@ router.post('/', (req, res) => {
     });
 });
 
+// Update a user by id
 router.put('/:id', (req, res) => {
     User.update(req.body, {
         individualHooks: true,
@@ -72,7 +74,7 @@ router.put('/:id', (req, res) => {
     })
     .then(dbUserData => {
         if (!dbUserData) {
-            res.status(400).json({ message: 'No user found with that id! '});
+            res.status(400).json({ message: 'No user found with that id' });
             return;
         }
         res.json(dbUserData);
@@ -83,6 +85,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
+// Delete a user by id
 router.delete('/:id', (req, res) => {
     User.destroy({
         where: {
@@ -91,7 +94,7 @@ router.delete('/:id', (req, res) => {
     })
     .then(dbUserData => {
         if (!dbUserData) {
-            res.status(400).json({ message: 'No user found with that id! '});
+            res.status(400).json({ message: 'No user found with that id' });
             return;
         }
         res.json(dbUserData);
