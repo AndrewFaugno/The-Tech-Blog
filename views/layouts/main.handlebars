@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Tech Blog</title>
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div>
+        <header class="p-3">
+            <nav class="p-2">
+                <a href="/" class="pr-5 secondary">Home</a>
+                <a href="/dashboard" class="pr-5 secondary">Dashboard</a>
+                {{#if loggedIn}}
+                <a href="/logout" class="secondary">Logout</a>
+                {{else}}
+                <a href="/login" class="secondary">Login</a>
+                {{/if}}
+            </nav>
+            <div class="col-3">
+                <div class="title-card rounded">
+                    <h1 class="p-2 primary rounded font-weight-bold bgs-secondary">
+                        The Tech Blog
+                    </h1>
+                </div>
+            </div>
+        </header>
+    </div>
+    <main>
+        {{{ body }}}
+    </main>
+</body>
+</html>

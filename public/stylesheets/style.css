@@ -1,0 +1,54 @@
+:root {
+    --primary-color: #231010;
+    --secondary-color: #D9EAD3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--secondary-color) !important;
+}
+
+.primary {
+    color: var(--primary-color);
+}
+
+.secondary {
+    color: var(--secondary-color); 
+}
+
+.bgs-primary, header {
+    background: var(--primary-color);
+}
+
+.bgs-secondary, body {
+    background-color: var(--secondary-color);
+}
+
+header nav a {
+    text-decoration: none;
+    font-size: large;
+}
+
+.title-card {
+    box-shadow: 6px 6px #888888;
+}
+
+.post-card {
+    width: 80%;
+}
+
+.post-title {
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.card {
+    border-color: var(--primary-color) !important;
+    border-width: medium !important;
+}
+

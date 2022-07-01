@@ -1,0 +1,17 @@
+{{#each posts as |post|}}
+<div class="card post-card mt-4 mx-auto">
+    <div class="card-body d-flex justify-content-between bgs-primary">
+        <div class="post-title">
+            {{post.title}}
+        </div>
+        <div class="secondary">
+            Posted by {{user.username}} on {{post.created_at}}
+        </div>
+    </div>
+    <div class="bgs-secondary">
+        <div class="primary p-3 ">
+            {{post.content}}
+        </div>
+    </div>
+</div>
+{{/each}}
