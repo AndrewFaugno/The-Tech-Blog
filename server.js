@@ -23,12 +23,12 @@ const PORT = process.env.PORT || 3001;
 // app.use(session(sess));
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // turn on routes
-// app.use(routes);
+app.use(routes);
 
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`Now listening on http://localhost:${PORT}`));
 });
