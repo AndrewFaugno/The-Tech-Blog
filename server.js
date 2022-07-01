@@ -17,10 +17,18 @@ const sess = {
     })
 };
 
+// added express-handlebars
+const helpers = require('./utils/helpers');
+const exphbs = require('express-handlebars');
+const hbs = exphbs.create({ extname: '.hbs', helpers });
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(session(sess));
+
+app.engine('.hbs', hbs.engine);
+app.set('view engine', 'handlebars')
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
