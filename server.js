@@ -1,10 +1,9 @@
 // adds dependencies 
 const express = require('express');
 const routes = require('./controllers');
-const sequelize = require('.config/connection');
+const sequelize = require('./config/connection');
 const path = require('path');
 const session = require('express-session');
-const sequelize = require('sequelize');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // enable cookies to save user session
@@ -27,7 +26,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-turn on routes
-app.use(routes);
+// turn on routes
+// app.use(routes);
 
-app.listen(PORT, () => console.log(`Now listening on http://localhost:${PORT}`));
+sequelize.sync({ force: true }).then(() => {
+    app.listen(PORT, () => console.log(`Now listening on http://localhost:${PORT}`));
+});
