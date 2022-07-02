@@ -1,4 +1,5 @@
 {{#each posts as |post|}}
+<a href="/post/{{post.id}}">
 <div class="card post-card mt-4 mx-auto">
     <div class="card-body d-flex justify-content-between bgs-primary">
         <div class="post-title">
@@ -14,4 +15,5 @@
         </div>
     </div>
 </div>
+</a>
 {{/each}}

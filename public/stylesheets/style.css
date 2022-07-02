@@ -9,6 +9,10 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none !important;
+}
+
 body {
     background-color: var(--secondary-color) !important;
 }
