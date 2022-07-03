@@ -31,6 +31,7 @@ router.get('/', (req, res) => {
     });
 });
 
+// renders sinlge post page 
 router.get('/post/:id', (req, res) => {
     Post.findOne({
         where: {
@@ -83,5 +84,35 @@ router.get('/post/:id', (req, res) => {
         res.status(500).json(err);
     });
 });
+
+// renders login page if user is not logged in
+router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+
+    res.render('login')
+});
+
+// renders signup page if user is not logged in
+router.get('/signup', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+
+    res.render('signup');
+});
+
+// renders dashboard page if user is logged in
+router.get('/dashboard', (req, res) => {
+    if (!req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+
+    res.render('dashboard');
+})
 
 module.exports = router;
