@@ -18,19 +18,19 @@ body {
 }
 
 .primary {
-    color: var(--primary-color);
+    color: var(--primary-color) !important;
 }
 
 .secondary {
-    color: var(--secondary-color); 
+    color: var(--secondary-color) !important; 
 }
 
 .bgs-primary, header {
-    background: var(--primary-color);
+    background: var(--primary-color) !important;
 }
 
 .bgs-secondary, body {
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-color) !important;
 }
 
 header nav a {
@@ -56,3 +56,6 @@ header nav a {
     border-width: medium !important;
 }
 
+textarea {
+    width: 100% !important;
+}

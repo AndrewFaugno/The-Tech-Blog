@@ -1,3 +1,24 @@
 {{> post-info post}}
 
+<div class="card post-card mt-4 mx-auto">
+    <div class="card-body d-flex justify-content-between bgs-primary">
+        <div class="post-title">
+
+        </div>
+        <div class="secondary">
+
+        </div>
+    </div>
+    <div class="comment-form">
+        <div class="primary p-3 bgs-secondary">
+            Comment
+            <textarea name="comment-body"></textarea>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="w-100 m-auto bgs-primary btn secondary">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 {{> comments post.comments}}
