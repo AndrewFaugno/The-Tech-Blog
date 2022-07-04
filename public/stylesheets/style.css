@@ -59,3 +59,10 @@ header nav a {
 textarea {
     width: 100% !important;
 }
+
+#logout {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
