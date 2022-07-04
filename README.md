@@ -13,7 +13,7 @@
   * [License](#license)
   
   ## Installation
-  Clone repo and run `npm i` to install dependencies. Then create the database with `source db/schema.sql` in mysql. 
+  Clone repo and run `npm i` to install dependencies. Then create the database with `source db/schema.sql` in mysql. To add seeds run `node seeds/index` to generate example data for database.
   
   ## Usage
   To use this project you must add a dotenv file with your mysql username and password thenrun `node server` or `npm start`.
