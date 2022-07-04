@@ -1,16 +1,10 @@
 {{> post-info post}}
 
+{{#if loggedIn}}
 <div class="card post-card mt-4 mx-auto">
     <div class="card-body d-flex justify-content-between bgs-primary">
-        <div class="post-title">
-
-        </div>
-        <div class="secondary">
-
-        </div>
     </div>
-    {{#if loggedIn}}
-    <div class="comment-form">
+    <form class="comment-form">
         <div class="primary p-3 bgs-secondary">
             Comment
             <textarea name="comment-body"></textarea>
@@ -18,9 +12,13 @@
                 <button type="submit" class="w-100 m-auto bgs-primary btn secondary">Submit</button>
             </div>
         </div>
-    </div>
-    {{/if}}
+    </form>
 </div>
+{{/if}}
 
 
 {{> comments post.comments}}
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}

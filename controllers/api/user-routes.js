@@ -51,16 +51,26 @@ router.get('/:id', (req, res) => {
 });
 
 // Create a user
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
     User.create({
         username: req.body.username,
         password: req.body.password
     })
     .then(dbUserData => {
         // save user session
+        req.session.save(() => {
+            // declare session variables
+            req.session.user_id = dbUserData.id;
+            req.session.username = dbUserData.username;
+            req.session.loggedIn = true;
 
-        res.json(dbUserData);
-    });
+            res.json({ user: dbUserData, message: 'You are now logged in!' });
+        });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    })
 });
 
 // authenticates user login
