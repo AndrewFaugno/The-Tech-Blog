@@ -9,7 +9,7 @@ async function signupFormHandler(event) {
 
     if (username && password) {
         const response = await fetch('/api/users', {
-            method: 'post',
+            method: 'POST',
             body: JSON.stringify({
                 username,
                 password
@@ -19,7 +19,6 @@ async function signupFormHandler(event) {
 
         // check response status
         if (response.ok) {
-            console.log('success')
             document.location.replace('/dashboard')
         } else {
             alert(response.statusText);
