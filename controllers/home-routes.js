@@ -105,14 +105,4 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
-// renders dashboard page if user is logged in
-router.get('/dashboard', (req, res) => {
-    if (!req.session.loggedIn) {
-        res.redirect('/');
-        return;
-    }
-
-    res.render('dashboard');
-})
-
 module.exports = router;

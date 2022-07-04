@@ -60,7 +60,7 @@ textarea {
     width: 100% !important;
 }
 
-#logout {
+.link {
     background: none;
     border: none;
     cursor: pointer;
